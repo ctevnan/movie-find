@@ -19743,6 +19743,12 @@ var AppActions = {
       actionType: AppConstants.SEARCH_MOVIES,
       movie: movie
     });
+  },
+  receiveMovieResults: function(movies){
+    AppDispatcher.handleViewAction({
+      actionType: AppConstants.RECEIVE_MOVIE_RESULTS,
+      movie: movies
+    });
   }
 }
 
