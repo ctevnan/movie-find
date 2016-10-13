@@ -19745,7 +19745,7 @@ var AppActions = {
     });
   },
   receiveMovieResults: function(movies){
-    console.log('movies');
+    console.log(movies);
     AppDispatcher.handleViewAction({
       actionType: AppConstants.RECEIVE_MOVIE_RESULTS,
       movie: movies
@@ -19871,6 +19871,9 @@ var _movies = [];
 var _selected = '';
 
 var AppStore = assign({}, EventEmitter.prototype, {
+  setMovieResults: function(movies){
+    _movies = movies;
+  },
   emitChange: function(){
     this.emit(CHANGE_EVENT);
   },
@@ -19891,7 +19894,10 @@ AppDispatcher.register(function(payload){
       AppAPI.searchMovies(action.movie);
       AppStore.emit(CHANGE_EVENT);
       break;
-
+    case AppConstants.RECEIVE_MOVIE_RESULTS:
+      AppStore.setMovieResults(action.movies);
+      AppStore.emit(CHANGE_EVENT);
+      break;
   }
 
   return true;
