@@ -18,9 +18,11 @@ var SearchForm = React.createClass({
     },
 
     onSubmit: function(e){
-       e.preventDefault();
+      e.preventDefault();
 
-       console.log(this.refs.title.value);
+      var movie = {
+        title: this.refs.title.value.trim()
+      }
     }
 });
 
