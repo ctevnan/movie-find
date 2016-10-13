@@ -19116,7 +19116,7 @@ var App = React.createClass({displayName: "App",
             React.createElement("div", null, 
                 "MY App"
             )    
-        );
+        )
     }
 });
 
