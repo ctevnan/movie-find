@@ -19879,7 +19879,8 @@ AppDispatcher.register(function(payload){
 
   switch(action.actionType){
     case AppConstants.SEARCH_MOVIES:
-      console.log('Searching for movie '+ movie.title);
+      console.log('Searching for movie '+ action.movie.title);
+      AppAPI.searchMovies(action.movie);
       AppStore.emit(CHANGE_EVENT);
       break;
 
@@ -19895,7 +19896,17 @@ var AppActions = require('../actions/AppActions');
 
 module.exports = {
   searchMovies: function(movie){
-    
+    $.ajax({
+      url: 'http://www.omdbapi.com/?s='+movie.title,
+      dataType: 'json',
+      cache: false,
+      success: function(data){
+        AppActions.receiveMovieResults(data.Search)
+      }.bind(this),
+      error: function(xhr, status, err){
+        alert(err);
+      }.bind(this)
+    });
   }
 }
 
