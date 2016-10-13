@@ -12,19 +12,20 @@
   },
   "author": "Carolyn Tevnan",
   "license": "ISC",
-  "devDependencies":{
-    "browserify":"*",
-    "flux":"*",
-    "gulp":"*",
-    "reactify":"*",
-    "vinyl-source-stream":"*",
-    "object-assign":"*"
+  "devDependencies": {
+    "browserify": "*",
+    "flux": "*",
+    "gulp": "^3.9.1",
+    "object-assign": "*",
+    "react": "^0.14.8",
+    "reactify": "*",
+    "vinyl-source-stream": "*"
   },
-  "dependencies":{
-    "react":"0.14.7",
-    "react-dom":"^0.14.7"
+  "dependencies": {
+    "react": "0.14.8",
+    "react-dom": "^0.14.8"
   },
-  "bugs":{
+  "bugs": {
     "url": "https://github.com/ctevnan/movie-find/issues"
   },
   "homepage": "https://github.com/ctevnan/movie-find#readme"
