@@ -19787,6 +19787,8 @@ var SearchForm = React.createClass({displayName: "SearchForm",
       var movie = {
         title: this.refs.title.value.trim()
       }
+
+      AppActions.searchMovies(movie);
     }
 });
 
